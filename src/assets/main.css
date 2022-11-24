@@ -1,9 +1,9 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  /* max-width: 1280px; */
+  /* margin: 0 auto; */
+  /* padding: 2rem; */
 
   font-weight: normal;
 }
@@ -21,7 +21,7 @@ a,
   }
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   body {
     display: flex;
     place-items: center;
@@ -32,4 +32,350 @@ a,
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
+} */
+
+header{
+  background-color:#F4B0B0;
+  /* position: fixed;
+  z-index: 10; */
+  width: 100%;
+  top:0;
+}
+
+#logo{
+height: 50px;
+}
+
+.nav-link{
+color: white;
+font-weight: 500;
+}
+
+.nav-link:hover{
+color:rgb(245, 223, 233);
+}
+
+
+.footer{
+  background-color: rgb(43, 48, 68);;
+  padding: 20px;
+  color:white;
+}
+
+.footer-right{
+  border-left: 1px solid ;
+  padding: 0 10px;
+}
+
+#banner{
+  padding: 20px 50px ;
+
+}
+
+.banner-introduct, .banner-image {
+  max-width: 50%;
+}
+
+.banner-image{
+  padding: 50px;
+}
+
+img{
+  max-width: 100%;
+}
+
+.banner-title{
+  font-size: 30px;
+  margin: 0 0 10px;
+  font-weight: 500;
+  font-family: 'Quicksand',sans-serif;
+  text-transform: uppercase;
+}
+
+.banner-des{
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+  padding: 25px 0;
+}
+
+.banner-button{
+  background-color: #f48380;
+  text-decoration: none;
+  color: white;
+  padding: 15px 25px;
+  border: 1px solid #f48380;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 25px;
+  width: 100%;
+}
+
+#hotproduct{
+  background-color: #fde4e9;
+}
+.banner-button:hover{
+  background-color: white;
+  color: #f48380;
+}
+
+.productpage-title{
+  background-image: url('https://st.depositphotos.com/4514073/59538/i/450/depositphotos_595386262-stock-photo-set-cosmetic-skin-care-products.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.overlay{
+  background-color: #322F52;
+  opacity: 0.37;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+}
+.page-title{
+align-self: center;
+font-size: 40px;
+font-family: "Lora", Sans-serif;
+color: #fff;
+font-weight: 400;
+ height: 60px; 
+text-align: center;
+z-index: 2;
+position: relative;
+/* padding: 100px */
+}
+
+.product-price{
+font-family: "Poppins", Sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1em;
+  color: #DE5F53;
+  /* padding-top: 10px; */
+}
+
+.product-cart{
+  width: 24px;
+  height: 24px;
+  border: none;
+  color: #DE5F53;
+}
+
+.product{
+text-align: center;
+border-style: solid;
+border-width: 20px 20px 20px 20px;
+border-color: #eeeeee;
+border-radius: 10px 10px 10px 10px;
+background-color: #eeeeee ;
+padding: 0 40px; 
+margin: 15px -30px;
+max-width: 100%;
+}
+
+img{
+max-width: 100%;
+}
+
+.product-title{
+font-size: 20px;
+font-weight: 500;
+font-family: "Lora", Sans-serif;
+}
+
+
+.product img{
+  height:250px;
+}
+
+.row{
+justify-content: space-between;
+}
+
+.form-title{
+  /* font-size: 40px; */
+  /* font-weight: 700; */
+  font-family: "Lora", Sans-serif;
+  margin-bottom: 15px;
+}
+
+
+.col-form-label{
+font-family: "Lora", Sans-serif;
+}
+
+.signup-img1 img{
+margin-left: 100px; 
+width: 300px;
+/* height: 200px; */
+border-radius: 50px;
+}
+
+.signup-img2 img{
+width: 800px;
+/* height: 200px; */
+border-radius: 50px;
+}
+
+img{
+  max-width: 100%;
+}
+thead td{
+  font-weight: 600;
+  font-size: 18px;
+}
+
+tr, thead{
+  border: 1px solid rgba(0,0,0,.1);
+  /* height: 100px; */
+}
+
+.cart-col3 input{
+  width: 50px;
+  line-height: 40px;
+  padding-left: 10px;
+    text-align: center;
+}
+
+
+.cart-col1 img{
+  width: 60px;
+}
+
+td{
+  padding: 9px 12px;
+}
+
+.cart{
+  width: 100%;
+  font-family: "Lora", Sans-serif;
+}
+
+h2,h3{
+  font-family: "Lora", Sans-serif;
+}
+
+.cart-bottom{
+  justify-content: space-between;
+  margin:0;
+  padding: 50px 0;
+}
+
+.back-shopping span{
+  padding: 0 10px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.deal{
+  border: none;
+}
+
+.deal td{
+ padding: 0;
+}
+
+.form-title{
+  /* font-size: 40px; */
+  /* font-weight: 700; */
+  font-family: "Lora", Sans-serif;
+  /* margin-bottom: 20px; */
+}
+
+
+.col-form-label{
+font-family: "Lora", Sans-serif;
+}
+
+.signup-img1 img{
+margin-left: 100px; 
+width: 300px;
+/* height: 200px; */
+border-radius: 50px;
+}
+
+.signup-img2 img{
+width: 800px;
+/* height: 200px; */
+border-radius: 50px;
+}
+
+input{
+  width: 100%;
+}
+/* tr, thead{
+  border: 1px solid rgba(0,0,0,.1);
+  /* height: 100px; */
+*/
+
+.cart-col3 input{
+  width: 50px;
+  line-height: 40px;
+  padding-left: 10px;
+    text-align: center;
+}
+
+
+.cart-col1 img{
+  width: 60px;
+}
+
+td{
+  padding: 9px 12px;
+}
+
+.cart{
+  width: 100%;
+  font-family: "Lora", Sans-serif;
+}
+
+h2,h3{
+  font-family: "Lora", Sans-serif;
+}
+
+.cart-bottom{
+  justify-content: space-between;
+  margin:0;
+  padding: 50px 0;
+}
+
+.back-shopping span{
+  padding: 0 10px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.order table{
+  width: 100%;
+}
+
+.order{
+  border-left: 1px solid rgba(0,0,0,.1);
+}
+
+.order tr{
+  border: none;
+  border-top: 1px solid rgba(0,0,0,.1);
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.order-price{
+  color: #f48380;
+}
+
+header .product-cart{
+  color: white;
+}
+
+.editproduct{
+  border-left: none;
+  border-right: 1px solid rgba(0,0,0,.1);
 }

@@ -1,16 +1,30 @@
 <script>
-export default{
-
-}
+  import MyHeader from "@/components/MyHeader.vue";
+  import MyFooter from "@/components/MyFooter.vue";
+  import ProductPage from "@/views/ProductPage.vue";
+  import OrderPage from "@/views/OrderPage.vue";
+  export default{
+    components:{
+      MyHeader,
+      MyFooter,
+      OrderPage,
+    },
+  };
 </script>
 
 <template>
-  <h1>Hello , Vue.js</h1>
-</template>  
+  <div id="app">
+    <MyHeader/>
+    <!-- <ProductPage/> -->
+      <router-view/>
+      <!-- <OrderPage/> -->
+      <MyFooter/>
+  </div>
+</template>
 
 <style>
-.page{
-  max-width: 400px;
-  margin: auto;
-}
+  .page{
+    max-width: 400px;
+    margin: auto;
+  }
 </style>
