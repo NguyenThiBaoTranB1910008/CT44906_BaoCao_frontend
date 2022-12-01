@@ -21,6 +21,14 @@
             var carttotal= this.totalCart();
             var cost= this.cost();
             return carttotal + cost;
+         },
+
+         fomatPrice(price){
+            const VND = new Intl.NumberFormat('vi-VN', {
+                style: 'currency',
+                currency: 'VND',
+            });
+            return VND.format(price);
          }
         },      
 
@@ -37,32 +45,32 @@
               <span>{{orderitem.title}}</span>
            </td>
            <td class="cart-col3">
-              <span class="order-price">{{orderitem.quatity}} x {{orderitem.price}} </span>
+              <span class="order-price">{{orderitem.quatity}} x {{fomatPrice(orderitem.price)}} </span>
             </td>
         </tr>
-         <tr class="cart-item" >
-            <td class="cart-col1" colspan="2">
+      <tr class="cart-item ordertotal" >
+            <td class="cart-col1" colspan="2" >
                <span>Tổng đơn hàng:</span>
             </td>
-            <td class="cart-col3">
-               <span class="">{{totalCart()}}đ</span>
+            <td>
+               <span class="">{{fomatPrice(totalCart())}}</span>
             </td>
          </tr>
-         <tr class="cart-item" >
+         <tr class="cart-item ordertotal"  >
             <td class="cart-col1" colspan="2">
                <span>Phí vận chuyển:</span>
             </td>
-            <td class="cart-col3">
-               <span class="">{{cost()}}đ</span>
+            <td>
+               <span class="">{{fomatPrice(cost())}}</span>
             </td>
          </tr>
-         <tr class="cart-item" >
+         <tr class="cart-item ordertotal" >
             <td class="cart-col1" colspan="2">
                <span>Tổng đơn hàng:</span>
             </td>
-            <td class="cart-col3">
+            <td class="cart-col3 ordertotal">
                <!-- <input type="number" :value="cartitem.quatity" v-on:change="updateCartItem(cartitem, $event)" min="1" size="4"> -->
-               <span class="order-price">{{totalPrice()}}đ</span>
+               <span class="order-price">{{fomatPrice(totalPrice())}}</span>
             </td>
          </tr>   
       </table>

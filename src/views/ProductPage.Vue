@@ -4,16 +4,16 @@
       <h2 class="page-title">
         Our Products</h2>
     </div>
-    <ProductList v-bind:products="products"/> 
-    <router-link
-                :to="{
-                    name: 'product.edit',
-                }"
-            >
-                <span class="mt-2 badge badge-warning">
-                    <i class="fas fa-edit"></i>Hiệu chỉnh
-                </span>
-            </router-link>
+    <div class=" row">
+        <div class="col-8"></div>
+        <div class="col-4 seatchText">
+            <InputSearch v-bind:searchText="searchText"
+                            v-on:updateModelValue="updateModelValue" />
+        </div>
+    </div>
+    <ProductList v-if= "filteredProductsCount > 0"
+                :products ="filteredProducts"/> 
+
  </template> 
 <!-- <script>
     export default{
@@ -27,17 +27,40 @@
   import ProductList from "@/components/ProductList.vue";
   import ProductService from '@/services/product.service.js';
   import CartService from '@/services/cart.service.js';
+  import InputSearch from '@/components/InputSearch.vue';
+
   export default{
     components:{
       MyHeader,
       MyFooter,
       ProductList,
+      InputSearch
     },
     data(){
         return{
-          products: [{"title": "nama"}],
+          products: [],
+        searchText:"",
         };
     },
+    computed:{
+            productStrings(){
+                return this.products.map((product) =>{
+                    const {title, imageUrl, description, price, colection} = product;
+                    return [title].join("");
+                });
+            },
+            filteredProducts(){
+                if(!this.searchText)
+                return this.products;
+                return this.products.filter((_product, index) =>
+                    this.productStrings[index].includes(this.searchText));
+            },
+
+            filteredProductsCount(){
+                // alert(this.filteredProducts);
+                return this.filteredProducts.length;
+            },
+        },
     methods:{
         async retrieveContacts(){
             try{
@@ -51,76 +74,13 @@
             this.retrieveContacts();
         },
 
-        //     async removeAllContacts() {
-        //         if (confirm("Bạn muốn xóa tất cả Liên hệ?")) {
-        //         try {
-        //             await ContactService.deleteAll();
-        //             this.refreshList();
-        //         } catch (error) {
-        //             console.log(error);
-        //         }
-        //         }
-        //     },
-
-        //     goToAddContact() {
-        //         this.$router.push({ name: "contact.create" });
-        //     },
+        updateModelValue(value){
+            // alert(value);
+            this.searchText= value;
+        },
         },
       mounted() {
         this.refreshList();
         },
   };
 </script>
-
-
-<!-- <script>
-import MyHeader from "@/components/MyHeader.vue";
-import MyFooter from "@/components/MyFooter.vue";
-import ProductList from "@/components/ProductList.vue";
-import ProductService from '@/services/product.service';
-
-export default{
-    components:{
-      MyHeader,
-      MyFooter,
-      ProductList,
-    },
-
-    // data(){
-    //     return{
-    //     products: [],
-    //     };
-    // },
-    // methods:{
-        // async retrieveContacts(){
-        //     try{
-        //         this.products = await ProductService.getAll();
-        //     } catch(error){
-        //         console.log(error);
-        //     }
-        // },
-
-        // refreshList(){
-        //     this.retrieveContacts();
-        // },
-
-            // async removeAllContacts() {
-            //     if (confirm("Bạn muốn xóa tất cả Liên hệ?")) {
-            //     try {
-            //         await ContactService.deleteAll();
-            //         this.refreshList();
-            //     } catch (error) {
-            //         console.log(error);
-            //     }
-            //     }
-            // },
-
-            // goToAddContact() {
-            //     this.$router.push({ name: "contact.create" });
-            // },
-        // },
-    // mounted() {
-    //     this.refreshList();
-    //     },
-    };
-</script> -->

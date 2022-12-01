@@ -1,6 +1,10 @@
 <script>
     export default{
-       
+       methods:{
+        anounce(){
+          alert("Bạn cần đăng nhập để thay đổi thông tin sản phẩm")
+        }
+       }
     };
 </script>
 
@@ -15,7 +19,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class='nav-item'><a href="/" class='nav-link dt'>TRANG CHỦ</a></li>
                 <li class='nav-item'><a href="/product" class='nav-link dt'>SẢN PHẨM</a></li>
-                <!-- <li class='nav-item'><a href="/login" class='nav-link'>ĐĂNG KÝ/ ĐĂNG NHẬP</a></li> -->
+                <li class='nav-item'><a href="/login" class='nav-link' @click="anounce()">QUẢN LÝ SẢN PHẨM</a></li>
                 <!-- <li class='nav-item'><a href="/booktable" class='nav-link'>GIỚI THIỆU</a></li> -->
                 <!-- <li class='nav-item'><a href="/out" class='nav-link'>ĐĂNG XUẤT</a></li> -->
                 <li class='nav-item'><a href="/cart" class='nav-link'><i class="fa-solid fa-cart-shopping product-cart"></i></a></li>

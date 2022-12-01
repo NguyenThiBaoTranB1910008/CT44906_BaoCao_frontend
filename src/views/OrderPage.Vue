@@ -1,5 +1,5 @@
  <template>
-    <div class="container p-5">
+    <div class="container-fluild p-5 orderpage">
       <h2 class="form-title">Đơn hàng</h2>
       <div class="row form-border">
           <AdressForm v-bind:adress="adress" v-on:submitAdress="createAdress" />

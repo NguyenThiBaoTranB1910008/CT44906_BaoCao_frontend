@@ -1,7 +1,14 @@
 <template>
+    <div class="cartpage-title">
+      <div class="overlay"></div>
+      <h2 class="page-title">
+        Giỏ hàng</h2>
+    </div>
     <div class="container pt-5">
-   <h2>Giỏ hàng</h2>
-   <CartList v-bind:cart="cart"  v-on:deleteCartItem="deleteCartItem" v-on:updateCartItem="updateCartItem"/>
+   <CartList v-bind:cart="cart"  
+            v-on:deleteCartItem="deleteCartItem" 
+            v-on:updateCartItem="updateCartItem"
+            v-on:fomatPrice="fomatPrice"/>
     <div class="cart-bottom row">
       <div class="back-shopping col-6">
         <router-link :to="{ name: 'product'}" class="">
@@ -17,7 +24,7 @@
          </tr>
          <tr class="total">
             <td>Tổng cộng:</td>
-            <td>{{totalPrice}}đ</td>
+            <td>{{fomatPrice(totalPrice)}}</td>
          </tr>
          <tr></tr>
          <tr class="deal">
@@ -89,7 +96,7 @@
 
 
         async deleteCartItem(id) {
-            if (confirm("Bạn muốn xóa Liên hệ này?")) {
+            if (confirm("Bạn muốn xóa sản phẩm này?")) {
                 try {
                     await CartService.delete(id);
                     this.retrieveCart();
@@ -108,7 +115,15 @@
             } catch (error) {
                 console.log(error);
             }
-            },
+        },
+
+        fomatPrice(price){
+            const VND = new Intl.NumberFormat('vi-VN', {
+                style: 'currency',
+                currency: 'VND',
+            });
+            return VND.format(price);
+       },
         //     async removeAllContacts() {
         //         if (confirm("Bạn muốn xóa tất cả Liên hệ?")) {
         //         try {

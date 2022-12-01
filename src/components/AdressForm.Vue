@@ -1,17 +1,16 @@
   <template>
-        <div class="col-6 login pt-3 pe-5" >
+        <div class="col-6 pt-3 px-5 address" >
           <Form 
             @submit="submitAdress"
             :validation-schema="adressFormSchema"
           >
-          <!-- <form method="get" action="/order" id="signup"  @submit="submitAdress"> -->
-              <h4 class="form-title">Thông tin liên hệ:</h4>
+              <h4>Thông tin liên hệ:</h4>
               <div class="form-group">
                 <Field type="email" class="form-control" name="email" v-model="adressLocal.email" placeholder="Email"/>
                    <ErrorMessage name="email" class="error-feedback" />
                   </div>    
             <div class="pt-5">
-            <h4 class="form-title">Địa chỉ giao hàng</h4>
+            <h4>Địa chỉ giao hàng</h4>
             <div class="row pb-3">
                 <div class="form-group col-6">
                       <Field type="text" class="form-control" id="name" name="lastname" placeholder="Họ" v-model="adressLocal.lastname"/>
@@ -92,8 +91,8 @@ export default {
         city : yup.string().max(100, "Thành phố tối đa 100 ký tự."),
       });
         return {
-           adressLocal:{},
-            adressFormSchema,
+          adressLocal:{},
+          adressFormSchema,
         };
     },
     methods: {

@@ -23,6 +23,20 @@ const routes= [
         component: ()=> import("@/views/CartPage.vue"),
         props: true
     },
+
+    {
+        path:"/login",
+        name: "login",
+        component: ()=> import("@/views/Login.vue"),
+        props: true
+    },
+
+    {
+        path:"/signup",
+        name: "signup",
+        component: ()=> import("@/views/SignUp.vue"),
+        props: true
+    },
     
     {
         path:"/product",
@@ -42,6 +56,13 @@ const routes= [
         path:"/productedit",
         name: "product.edit",
         component: ()=> import("@/views/EditProduct.vue"),
+        props: true
+    },
+
+    {
+        path:"/detail/:id",
+        name: "product.detail",
+        component: ()=> import("@/views/DetailPage.vue"),
         props: true
     },
     

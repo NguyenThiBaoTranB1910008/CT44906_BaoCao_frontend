@@ -14,10 +14,9 @@
 
 <template>
   <div id="app">
-    <MyHeader/>
     <!-- <ProductPage/> -->
+    <MyHeader/>
       <router-view/>
-      <!-- <OrderPage/> -->
       <MyFooter/>
   </div>
 </template>

@@ -16,6 +16,10 @@ class CartService{
     async get(id){
         return (await this.api.get(`/${id}`)).data;
     }
+
+    async getByTitle(imageUrl){
+        return (await this.api.get(`/${imageUrl}`)).data;
+    }
     async update(id, data){
         return (await this.api.put(`/${id}`, data)).data;
     }

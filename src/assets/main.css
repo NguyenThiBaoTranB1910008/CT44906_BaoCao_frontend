@@ -11,23 +11,17 @@
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color:#DE5F53;
   transition: 0.4s;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
 
+body {
+  /* font-family:  "Lora", Sans-serif; */
+} 
 /* @media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
 
-  #app {
+ /* #app {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
@@ -35,7 +29,8 @@ a,
 } */
 
 header{
-  background-color:#F4B0B0;
+  background-color:#e58f8f;
+  /* background-color: #FFF7F5; */
   /* position: fixed;
   z-index: 10; */
   width: 100%;
@@ -69,7 +64,6 @@ color:rgb(245, 223, 233);
 
 #banner{
   padding: 20px 50px ;
-
 }
 
 .banner-introduct, .banner-image {
@@ -77,11 +71,14 @@ color:rgb(245, 223, 233);
 }
 
 .banner-image{
-  padding: 50px;
+  /* margin: 10px 0; */
+  /* height: 400px; */
+  width: 800px;
+  margin:50px;
 }
 
 img{
-  max-width: 100%;
+  width: 100%;
 }
 
 .banner-title{
@@ -112,14 +109,15 @@ img{
 }
 
 #hotproduct{
-  background-color: #fde4e9;
+  /* background-color: #fde4e9; */
+  background-color: #fef7e0;
 }
 .banner-button:hover{
   background-color: white;
   color: #f48380;
 }
 
-.productpage-title{
+.productpage-title, .cartpage-title{
   background-image: url('https://st.depositphotos.com/4514073/59538/i/450/depositphotos_595386262-stock-photo-set-cosmetic-skin-care-products.jpg');
   background-position: center center;
   background-repeat: no-repeat;
@@ -130,6 +128,9 @@ img{
   justify-content: center;
 }
 
+.cartpage-title{
+  background-image: url('https://dtd31o1ybbmk8.cloudfront.net/photos/ed5c0e62b43d7c4a1445231f9c8c0962/thumb.jpg');
+}
 .overlay{
   background-color: #322F52;
   opacity: 0.37;
@@ -161,6 +162,11 @@ font-family: "Poppins", Sans-serif;
   color: #DE5F53;
   /* padding-top: 10px; */
 }
+
+.product-description{
+  font-size: 16px;
+}
+
 
 .product-cart{
   width: 24px;
@@ -202,7 +208,9 @@ justify-content: space-between;
 
 .form-title{
   /* font-size: 40px; */
-  /* font-weight: 700; */
+  padding-left: 40px;
+  font-weight: 600;
+  /* color: #df6e6e; */
   font-family: "Lora", Sans-serif;
   margin-bottom: 15px;
 }
@@ -210,6 +218,8 @@ justify-content: space-between;
 
 .col-form-label{
 font-family: "Lora", Sans-serif;
+font-weight: 500;
+font-size: 16px;
 }
 
 .signup-img1 img{
@@ -234,7 +244,7 @@ thead td{
 }
 
 tr, thead{
-  border: 1px solid rgba(0,0,0,.1);
+  border: 1px solid rgba(0,0,0,0.2);
   /* height: 100px; */
 }
 
@@ -248,10 +258,6 @@ tr, thead{
 
 .cart-col1 img{
   width: 60px;
-}
-
-td{
-  padding: 9px 12px;
 }
 
 .cart{
@@ -281,13 +287,6 @@ h2,h3{
 
 .deal td{
  padding: 0;
-}
-
-.form-title{
-  /* font-size: 40px; */
-  /* font-weight: 700; */
-  font-family: "Lora", Sans-serif;
-  /* margin-bottom: 20px; */
 }
 
 
@@ -334,7 +333,10 @@ td{
 
 .cart{
   width: 100%;
-  font-family: "Lora", Sans-serif;
+}
+
+.cart thead{
+  background-color: #eeeeee;
 }
 
 h2,h3{
@@ -355,16 +357,17 @@ h2,h3{
 
 .order table{
   width: 100%;
+  background-color: #fff;
 }
 
 .order{
-  border-left: 1px solid rgba(0,0,0,.1);
+  border-left: 1px solid rgba(0,0,0,.5);
 }
 
 .order tr{
   border: none;
-  border-top: 1px solid rgba(0,0,0,.1);
-  border-bottom: 1px solid rgba(0,0,0,.1);
+  border-top: 1px solid rgba(0,0,0,.5);
+  border-bottom: 1px solid rgba(0,0,0,.5);
 }
 
 .order-price{
@@ -376,6 +379,123 @@ header .product-cart{
 }
 
 .editproduct{
+  /* padding-left: 10px; */
+  /* margin-left: 10px; */
   border-left: none;
-  border-right: 1px solid rgba(0,0,0,.1);
+  background-color: #eeeeee;
+  /* border-right: 1px solid rgba(0,0,0,.1); */
+}
+
+.editproduct table{
+  margin-left: 22px;
+}
+.seatchText{
+  padding-top: 20px;
+  padding-right: 50px;
+}
+
+
+.list-service{
+  list-style-type: none;
+  margin-top: 20px;
+  background-color: #f2dce0;
+}
+.list-service img{
+  width: 30px;
+}
+
+.list-service li{
+  padding: 10px 0;
+}
+
+.dkmain{
+  /* background-color: #e4e5e6; */
+  background-image: url('https://i.pinimg.com/736x/94/e0/18/94e018df8f011d489077374361b4026b.jpg'); 
+   background-repeat: no-repeat;
+  background-size: cover;
+  /* height: 100vh; */
+}
+
+footer img{
+  width: 30px;
+}
+
+.input-group input{
+  border:none;
+  border-bottom: 1px  solid rgba(10, 9, 9, 0.1);
+}
+
+.fa-magnifying-glass{
+  margin-top: 12px;
+  font-size: 18px;
+  padding-right: 5px;
+}
+
+.address{
+  padding-right: 80px;
+}
+
+.orderpage{
+  background-image: url('https://img.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg?w=2000');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  background-color: #eeeeee;
+}
+
+.incorectmess{
+  background-color: #f0d6d6;
+  color: #b11b0e;
+  /* padding: 5px; */
+  line-height: 40px;
+  margin-top: 10px;
+}
+
+/* .incorectmess p{
+  margin: 0px;
+} */
+.aroundform{
+  background-color: #fff;
+}
+
+.label-icon{
+  margin-right: 8px;
+}
+
+
+.total{
+  background-color: #eeeeee;
+}
+
+.total .cart-col3 span{
+  font-weight: 600;
+}
+
+.order .ordertotal{
+  border-top: none;
+  border-bottom: none;
+}
+
+.editpage{
+  padding-right: 50px;
+} 
+
+.editpage tr{
+  /* background-color: #f1f1f1; */
+  padding: 50px;
+  line-height: 30px;
+  /* margin-left: 50px; */
+  background-color: #fff;
+}
+
+.editpage td{
+  padding: 10px 25px !important;
+}
+
+.pink{
+  background-color: #60ceed !important;
+}
+
+.error-feedback{
+  color: red;
 }

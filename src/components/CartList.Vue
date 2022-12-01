@@ -18,11 +18,19 @@
                     "title": data.title,
                     "price": data.price,
                     "quatity":  parseInt(event.target.value),
-                };
+            };
             this.$emit('updateCartItem', cartItem);
             // window.location.href = "/cart"
             // console.log(event.target.value);
-         }
+         },
+         
+         fomatPrice(price){
+            const VND = new Intl.NumberFormat('vi-VN', {
+                style: 'currency',
+                currency: 'VND',
+            });
+            return VND.format(price);
+        }
       }
     };
 </script>
@@ -49,7 +57,7 @@
                <input type="number" :value="cartitem.quatity" v-on:change="updateCartItem(cartitem, $event)" min="1" size="4">
             </td>
             <td class="cart-col4">
-               <p>{{cartitem.price}}$</p>
+               <p>{{fomatPrice(cartitem.price)}}</p>
             </td>
             <td class="cart-col5">
                <a href="#" v-on:click="deleteCartItem(cartitem._id)">
