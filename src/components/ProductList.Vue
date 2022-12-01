@@ -23,11 +23,9 @@
                 try {
                     this.cart=await CartService.getAll();
                     for(var i=0; i < this.cart.length; i++){
-                        // CartService.update(this.cart[i]._id, this.cart[i]);
                         if(product._id == this.cart[i].idproduct)
                         {
                             this.cart[i].quatity += 1;
-                            // alert(this.cart[0]);
                             has=true;
                             await CartService.update(this.cart[i]._id, this.cart[i]);
                             alert("Sản phẩm đã được cập nhật vào giỏ hàng.");

@@ -1,7 +1,7 @@
 import createApiClient from "./api.service";
 
 class AccountService{
-    constructor(baseUrl = "/api/login"){
+    constructor(baseUrl = "/api/user"){
         this.api = createApiClient(baseUrl);
     }
     async getAll(){
@@ -16,9 +16,6 @@ class AccountService{
     async findAccount(account){
         return (await this.api.post("/check", account)).data;
     }
-    // async findPass(pass){
-    //     return (await this.api.get(`/pass/${pass}`)).data;
-    // }
 }
 
 export default new AccountService();

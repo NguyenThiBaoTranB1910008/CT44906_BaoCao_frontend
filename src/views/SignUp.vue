@@ -47,7 +47,7 @@
             }
             else{
                await AccountService.create(account);
-                alert("Đăng ký thành công!!"); 
+               alert("Đăng ký thành công!!"); 
             }
          }catch (error) {
              alert(error);
